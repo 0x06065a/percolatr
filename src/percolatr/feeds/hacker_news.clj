@@ -1,10 +1,10 @@
 (ns percolatr.feeds.hacker-news
   (:require [clj-http.client :as httpc]))
 
-(def top-stories-url
+(def ^:private top-stories-url
   "https://hacker-news.firebaseio.com/v0/topstories.json")
 
-(defn make-item-url
+(defn- make-item-url
   [item-id]
   (format "https://hacker-news.firebaseio.com/v0/item/%d.json" item-id))
 
