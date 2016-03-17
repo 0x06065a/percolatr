@@ -20,6 +20,6 @@
   (let [response (httpc/get (make-item-url item-id) {:as :json})
         item (:body response)]
     {:id (:id item)
+     :source "https://news.ycombinator.com"
      :score (:score item)
      :url (:url item)}))
-
