@@ -18,8 +18,8 @@
 (defn get-item
   [item-id]
   (let [response (httpc/get (make-item-url item-id) {:as :json})
-        item (:body response)]
-    {:id (:id item)
+        {:keys [id score url]} (:body response)]
+    {:id id
      :source "https://news.ycombinator.com"
-     :score (:score item)
-     :url (:url item)}))
+     :score score
+     :url url}))
